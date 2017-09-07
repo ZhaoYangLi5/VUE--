@@ -1,9 +1,9 @@
 <template>
   <div class="ratingselect">
     <div class="rating-type">
-        <span @click="select(2,event)" class="block all" :class="{'active':selectType ===2 }">{{desc.all}} <span class="count">{{ratings.length}}</span> </span>
-        <span @click="select(0,event)" class="block postive" :class="{'active':selectType ===0 }">{{desc.postive}} <span class="count">{{postives.length}}</span></span>
-        <span @click="select(1,event)" class="block negative" :class="{'active':selectType ===1 }">{{desc.negative}} <span class="count">{{negatives.length}}</span></span>
+        <span @click="select(2)" class="block all" :class="{'active':selectType ===2 }">{{desc.all}} <span class="count">{{ratings.length}}</span> </span>
+        <span @click="select(0)" class="block postive" :class="{'active':selectType ===0 }">{{desc.postive}} <span class="count">{{postives.length}}</span></span>
+        <span @click="select(1)" class="block negative" :class="{'active':selectType ===1 }">{{desc.negative}} <span class="count">{{negatives.length}}</span></span>
     </div>
     <div @click = "toggleContent" class="switch" :class="{'on':onlyContent}">
         <i class="icon-check-circle"></i>
@@ -42,16 +42,16 @@ export default {
       }
     }
   },
-  data () {
-    return {
-      ratings: [],
-      selectType: '',
-      onlyContent: '',
-      desc: ''
-    }
-  },
+  // data () {
+  //   return {
+  //     ratings: [],
+  //     selectType: '',
+  //     onlyContent: '',
+  //     desc: ''
+  //   }
+  // },
   methods: {
-    select (type, event) {
+    select (type) {
       this.selectType = type
       this.$emit('select', type)
     },

@@ -81,7 +81,8 @@
       return {
         ratings: [],
         selectType: ALL,
-        onlyContent: true
+        onlyContent: true,
+        item: ''
       }
     },
     methods: {
